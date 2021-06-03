@@ -1,5 +1,6 @@
 * {
   font-family: 'Open Sans';
+
 }
 
 img {
@@ -10,7 +11,9 @@ img {
 
 body {
   background-color: #EAEAF4;
-  height: 97vh;
+  height: 100vh;
+  margin: 0px;
+  overflow: hidden;
   display: flex;
   /* border: 3px solid red; */
 }
@@ -40,7 +43,8 @@ form {
 }
 
 input {
-  width: 97%;
+  width: 97.5%;
+  height: 40%;
 }
 
 .body-input {
@@ -48,21 +52,35 @@ input {
   resize: none;
 }
 
-button {
-  width: 50%;
+.save-btn {
+  width: 100%;
+  height: 65%;
 }
 
 div {
-  /* border: 3px solid purple; */
+  border: 3px solid purple;
   height: 17%;
   width: 50%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  justify-content: flex-end;
+}
+
+.title-div {
+  margin-top: 8px;
+  height: 23%;
 }
 
 .body-div {
-  height: 20%
+  height: 27%;
+  margin-top: 13px;
+}
+
+.search-div {
+  height: 23%;
+  margin-bottom: 25px;
+  position: relative;
+  display: flex;
 }
 
 /*Take a look at the height of the elements within the form page. Adjust div heights so that we can properly adjust the body input height. Add margins where needed to divs to match the comp more closely*/
