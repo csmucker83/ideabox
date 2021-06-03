@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="styles.css">
-  <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>IdeaBox</title>
+  </head>
+  <body>
     <aside class="left-section">
-      <h1 class="text-color">Ideabox</h1>
-      <h3 class="text-color">Filter Starred Ideas</h3>
-      <button class="">Showed Starred Ideas</button>
+      <h1>IdeaBox</h1>
+      <h3>Filter Starred Ideas</h3>
+      <button>Show Starred Ideas</button>
     </aside>
-
     <main>
       <form class="top-section">
         <lable>Title</lable>
@@ -23,28 +22,27 @@
         <button>Save</button>
         <div>
           <input type="text" placeholder="Search Ideas">
-          <img src="" alt="Search icon">
+          <img src="/assets/search.svg" alt="Search icon">
         </div>
       </form>
-
       <section>
         <article class="bottom-section">
           <header>
-            <img src="" alt="">
-            <img src="" alt="">
+            <img src="/assets/star.svg" alt="star">
+            <img class="hidden" src="/assets/star-active.svg" alt="active star">
+            <img src="/assets/delete.svg" alt="delete">
+            <img class="hidden" src="/assets/delete-active.svg" alt="active delete">
           </header>
-          <h4>
-          </h4>
-          <p>
-          </p>
+          <h4>Idea title</h4>
+          <p>Idea body</p>
           <footer>
-            <img src="" alt="">
+            <img src="/assets/comment.svg" alt="add comment">
             <h6>Comment</h6>
           </footer>
         </article>
       </section>
-  </main>
-  <script type="text/javscript" src="idea.js"></script>
-  <script type="text/javscript" src="main.js"></script>
-</body>
+    </main>
+    <script type="text/javscript" src="idea.js"></script>
+    <script type="text/javscript" src="main.js"></script>
+  </body>
 </html>
