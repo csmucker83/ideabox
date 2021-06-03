@@ -9,7 +9,7 @@
     <title>IdeaBox</title>
   </head>
   <body>
-    <aside class="left-section">
+    <aside>
       <h1>IdeaBox</h1>
       <hr size=1>
       <h3>Filter Starred Ideas</h3>
@@ -17,19 +17,24 @@
       <hr size=1>
     </aside>
     <main>
-      <form class="top-section">
-        <lable>Title</lable>
-        <input type="text">
-        <label>Body</label>
-        <input type="text">
+      <form>
+        <div>
+          <lable>Title</lable>
+          <input type="text">
+        </div>
+        <div class="body-div">
+          <label>Body</label>
+          <textarea class="body-input" type="text">
+          </textarea>
+        </div>
         <button>Save</button>
         <div>
           <input type="text" placeholder="Search Ideas">
-          <img src="assets/search.svg" alt="Search icon">
+          <img src="assets/search.svg" alt="search icon">
         </div>
       </form>
       <section>
-        <article class="bottom-section">
+        <article>
           <header>
             <img src="assets/star.svg" alt="star">
             <img src="assets/star-active.svg" alt="active star">
