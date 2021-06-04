@@ -4,8 +4,8 @@
 }
 
 img {
-  height: 45%;
-  width: 10%;
+  height: 100%;
+  width: 13.6%;
   border: 1px solid blue;
 }
 
@@ -97,7 +97,6 @@ div {
 }
 
 .search-input {
-  width: 87%;
   height: 100%;
   margin-left: 10%;
 }
@@ -107,9 +106,37 @@ section {
   border: 2px solid red;
   height: 61%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 article {
-  border: 2px solid black;
+  height: 43%;
+  width: 30%;
+  background-color: #FFFFFF;
+  border: 2px solid #1F1F3D;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 13.6%;
+  background-color: #1F1F3D;
+  border-bottom: 2px solid #1F1F3D;
+
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  height: 13.6%;
+  background-color: #5356A4;
+  border-top: 2px solid #1F1F3D;
+}
+
+.hidden {
+  display: none;
 }
