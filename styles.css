@@ -6,7 +6,6 @@
 img {
   height: 100%;
   width: 13.6%;
-  border: 1px solid blue;
 }
 
 body {
@@ -15,7 +14,6 @@ body {
   margin: 0px;
   overflow: hidden;
   display: flex;
-  /* border: 3px solid red; */
 }
 
 aside {
@@ -27,13 +25,11 @@ aside {
 main {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
   height: 100%;
   width: 75%;
 }
 
 form {
-  border: 3px solid orange;
   background-color: #A9AAE2;
   height: 39%;
   display: flex;
@@ -55,9 +51,11 @@ input {
 .save-btn {
   width: 50%;
   height: 12%;
+  border-radius: 3px;
   background-color: #353567;
   border: none;
   color: #E9E9F3;
+  font-size: 1.5em;
   font-weight: bold;
   margin: 3%;
 }
@@ -83,14 +81,19 @@ div {
 
 .search-div {
   height: 11%;
-  margin-bottom: 25px;
+  margin-bottom: 3%;
   position: relative;
   display: flex;
+  background-color: #353567;
+  justify-content: center;
+  border-radius: 2px;
 }
 
 .search-icon {
   position: absolute;
-  height: 92%;
+  height: 55%;
+  width: auto;
+  margin-left: 2%;
   background-color: #353567;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
@@ -103,7 +106,6 @@ div {
 /*Take a look at the height of the elements within the form page. Adjust div heights so that we can properly adjust the body input height. Add margins where needed to divs to match the comp more closely*/
 
 section {
-  border: 2px solid red;
   height: 61%;
   display: flex;
   flex-wrap: wrap;
@@ -148,25 +150,29 @@ footer {
 .aside-btn {
   background-color: #5356a4;
   color: #e9e9f3;
-  margin-left: 15%;
-  margin-right: 15%;
+  letter-spacing: 1px;
+  margin: 3.5% 5% 9% 5%;
   cursor: pointer;
-  padding: 10px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  padding: 3% 3% 2%;
+  width: 90%;
+  height: 4.5%;
+  font-size: 1.65em;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 2px;
+  border: none;
 }
 
 .ideabox-title {
   color: #e9e9f3;
   font-weight: bold;
-  margin-left: 10px;
+  letter-spacing: .75px;
+  margin: 8% 7% 6.5%;
+  font-size: 1.65em;
 }
 
 .words {
   color: #bfbfdd;
-  margin-left: 10px;
+  margin: 8.5% 8% 7%;
+  letter-spacing: .75px;
+  font-size: 1.3em;
 }
