@@ -113,3 +113,33 @@ section {
 article {
   border: 2px solid black;
 }
+
+.line {
+  border-top: 1px solid #5356A4;
+}
+
+.aside-btn {
+  background-color: #5356a4;
+  color: #e9e9f3;
+  margin-left: 15%;
+  margin-right: 15%;
+  cursor: pointer;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.ideabox-title {
+  color: #e9e9f3;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.words {
+  color: #bfbfdd;
+  margin-left: 10px;
+}
