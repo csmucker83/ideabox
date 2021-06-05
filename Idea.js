@@ -19,13 +19,16 @@ class Idea {
     this.star = false;
   }
 
-  saveToStorage(idea) {
-    var ideaString = JSON.stringify(idea);
-    localStorage.setItem('ideaStored', ideaString);
+  saveToStorage() {
+    localStorage.setItem('ideaStored', JSON.stringify(this));
   }
 
-  deleteFromStorage(ideaToRemove) {
-    localStorage.remove(ideaToRemove);
+  deleteFromStorage() {
+    // for loop to iterate through the var ideas array
+    // for (var i = 0; i < ideas.length; i++) {
+    // };
+    // Access the ids (ideas[i].id) of the instances
+    localStorage.remove();
 
   }
 
