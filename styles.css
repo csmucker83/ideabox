@@ -63,9 +63,9 @@ input {
   cursor: pointer;
 }
 
-.save-btn: disabled {
-  background-color: #EAEAF4;
-  cursor: none;
+.inactive-save-btn {
+  background-color: slateblue;
+  cursor: not-allowed;
 }
 
 
