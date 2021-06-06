@@ -6,14 +6,17 @@ var titleInput = document.getElementById('titleInput');
 var saveBtn = document.getElementById('saveBtn');
 var bodyInput = document.getElementById('bodyInput');
 var formArea = document.getElementById('formArea');
-var ideaCard = document.getElementById('ideaCard');
+var ideaCardSection = document.getElementById('ideaCardSection');
+var deleteBtn = document.getElementById('deleteImage');
 
 //EventListeners
 window.addEventListener('load', loadPage);
 formArea.addEventListener('keypress', enableSaveBtn);
-saveBtn.addEventListener('click', function(){
+saveBtn.addEventListener('click', function() {
   createNewIdea(event);
 });
+ideaCardSection.addEventListener('click', deleteCard);
+
 
 //Functions and Event Handlers
 function loadPage() {
@@ -50,14 +53,14 @@ function clearInputFields() {
 };
 
 function renderCard() {
-  ideaCard.innerHTML = '';
+  ideaCardSection.innerHTML = '';
     for (var i = 0; i < ideas.length; i++) {
-      ideaCard.innerHTML +=
-      `<article>
+      ideaCardSection.innerHTML +=
+      `<article id=${ideas[i].id}>
         <section class="top-card-bar">
           <img class="star" src="assets/star.svg" alt="star">
           <img class="star hidden" src="assets/star-active.svg" alt="active star">
-          <img class="delete" src="assets/delete.svg" alt="delete">
+          <img class="delete" id="deleteImage" src="assets/delete.svg" alt="delete">
           <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
         </section>
         <div class="card-text">
@@ -69,5 +72,14 @@ function renderCard() {
           <h6>Comment</h6>
         </section>
       </article>`
+  }
+};
+
+function deleteCard() {
+  for (var i = 0; i < ideas.length; i++) {
+    if (event.target.id === 'deleteImage' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      ideas.splice(i, 1);
+      renderCard();
+    }
   }
 };
