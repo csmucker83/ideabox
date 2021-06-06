@@ -12,10 +12,10 @@
 // Each idea should be created as an object instance of the Idea class. Once an idea object is created, all that data can be used to update the DOM. That object should also be added to a list of all the ideas your application currently has. This should probably be a global variable in your main.js.
 
 class Idea {
-  constructor(title, body) {
+  constructor(titleInput, bodyInput) {
     this.id = Date.now();
-    this.title = title.value;
-    this.body = body.value;
+    this.title = titleInput;
+    this.body = bodyInput;
     this.star = false;
   }
 
