@@ -17,43 +17,26 @@
       <hr size=1 class="line">
     </aside>
     <main>
-      <form>
+      <form id="formArea">
         <div class="title-div">
           <label>Title</label>
-          <input id="titleInput" type="text">
+          <input id="titleInput" type="text" required>
         </div>
         <div class="body-div">
           <label>Body</label>
-          <textarea class="body-input" id="bodyInput" type="text">
+          <textarea class="body-input" id="bodyInput" type="text" required>
           </textarea>
         </div>
-          <button class="save-btn" id="saveBtn">Save
-          </button>
+          <button value= "submit" class="save-btn inactive-save-btn" disabled id="saveBtn">Save</button>
         <div class="search-div">
           <img class="search-icon" src="assets/search.svg" alt="search icon">
           <input class="search-input" type="text" placeholder="Search Ideas">
         </div>
       </form>
-      <section>
-        <article>
-          <section class="top-card-bar">     <!--change tag type in html and css-->
-            <img class="star" src="assets/star.svg" alt="star">
-            <img class="star hidden" src="assets/star-active.svg" alt="active star">
-            <img class="delete" src="assets/delete.svg" alt="delete">
-            <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
-          </section>
-          <div class="card-text">
-            <h4>Idea title</h4>
-            <p>Idea body. Don't ever play yourself. Every chance I get, I water the plants, Lion! Cloth talk.</p>
-          </div>
-          <section class="bottom-card-bar">
-            <img class="comment-icon" src="assets/comment.svg" alt="add comment">
-            <h6>Comment</h6>
-          </section>
-        </article>
+      <section id='ideaCard'> <!--needs class or id -->
       </section>
     </main>
-    <script type="text/javscript" src="Idea.js"></script>
-    <script type="text/javscript" src="main.js"></script>
+    <script type="text/javascript" src="Idea.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
