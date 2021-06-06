@@ -6,6 +6,7 @@
 img {
   height: 100%;
   width: 13%;
+  cursor: pointer;
 }
 
 body {
@@ -59,6 +60,12 @@ input {
   font-size: 1.5em;
   font-weight: bold;
   margin: 3%;
+  cursor: pointer;
+}
+
+.inactive-save-btn {
+  background-color: slateblue;
+  cursor: not-allowed;
 }
 
 
