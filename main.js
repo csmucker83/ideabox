@@ -6,16 +6,20 @@ var titleInput = document.getElementById('titleInput');
 var saveBtn = document.getElementById('saveBtn');
 var bodyInput = document.getElementById('bodyInput');
 var formArea = document.getElementById('formArea');
-var ideaCard = document.getElementById('ideaCard');
+var ideaCardSection = document.getElementById('ideaCardSection');
+var emptyStar = document.getElementById('inactiveStar');
+var filledStar = document.getElementById('activeStar');
 
 //EventListeners
 window.addEventListener('load', loadPage);
 formArea.addEventListener('keypress', enableSaveBtn);
-saveBtn.addEventListener('click', function(){
+saveBtn.addEventListener('click', function() {
   createNewIdea(event);
 });
+ideaCardSection.addEventListener('click', deleteCard);
+ideaCardSection.addEventListener('click', toggleFavoriteStatus);
 
-//Functions and Event Handlers
+// Functions and Event Handlers
 function loadPage() {
   disableSaveBtn();
 };
@@ -30,8 +34,8 @@ function createNewIdea(event) {
 };
 
 function enableSaveBtn() {
-  saveBtn.classList.remove('inactive-save-btn');
   if(titleInput.value && bodyInput.value) {
+    saveBtn.classList.remove('inactive-save-btn');
     saveBtn.disabled = false;
   }
   if(!titleInput.value || !bodyInput.value) {
@@ -50,14 +54,14 @@ function clearInputFields() {
 };
 
 function renderCard() {
-  ideaCard.innerHTML = '';
+  ideaCardSection.innerHTML = '';
     for (var i = 0; i < ideas.length; i++) {
-      ideaCard.innerHTML +=
-      `<article>
+      ideaCardSection.innerHTML +=
+      `<article id=${ideas[i].id}>
         <section class="top-card-bar">
-          <img class="star" src="assets/star.svg" alt="star">
-          <img class="star hidden" src="assets/star-active.svg" alt="active star">
-          <img class="delete" src="assets/delete.svg" alt="delete">
+          <img class="star" id="inactiveStar" src="assets/star.svg" alt="star">
+          <img class="star hidden" id="activeStar" src="assets/star-active.svg" alt="active star">
+          <img class="delete" id="deleteImage" src="assets/delete.svg" alt="delete">
           <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
         </section>
         <div class="card-text">
@@ -71,3 +75,25 @@ function renderCard() {
       </article>`
   }
 };
+
+function deleteCard() {
+  for (var i = 0; i < ideas.length; i++) {
+    if (event.target.id === 'deleteImage' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      ideas.splice(i, 1);
+      renderCard();
+    }
+  }
+};
+
+function toggleFavoriteStatus() {
+  for (var i = 0; i < ideas.length; i++) {
+    if(event.target.id === 'inactiveStar' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      ideas[i].star = true;
+      // emptyStar.classList.add('hidden');
+      // filledStar.classList.remove('hidden');
+      // if(img.className === 'star') {
+      //
+      }
+    }
+  }
+}
