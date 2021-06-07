@@ -7,7 +7,8 @@ var saveBtn = document.getElementById('saveBtn');
 var bodyInput = document.getElementById('bodyInput');
 var formArea = document.getElementById('formArea');
 var ideaCardSection = document.getElementById('ideaCardSection');
-var deleteBtn = document.getElementById('deleteImage');
+var emptyStar = document.getElementById('inactiveStar');
+var filledStar = document.getElementById('activeStar');
 
 //EventListeners
 window.addEventListener('load', loadPage);
@@ -16,9 +17,9 @@ saveBtn.addEventListener('click', function() {
   createNewIdea(event);
 });
 ideaCardSection.addEventListener('click', deleteCard);
+ideaCardSection.addEventListener('click', toggleFavoriteStatus);
 
-
-//Functions and Event Handlers
+// Functions and Event Handlers
 function loadPage() {
   disableSaveBtn();
 };
@@ -33,8 +34,8 @@ function createNewIdea(event) {
 };
 
 function enableSaveBtn() {
-  saveBtn.classList.remove('inactive-save-btn');
   if(titleInput.value && bodyInput.value) {
+    saveBtn.classList.remove('inactive-save-btn');
     saveBtn.disabled = false;
   }
   if(!titleInput.value || !bodyInput.value) {
@@ -58,8 +59,8 @@ function renderCard() {
       ideaCardSection.innerHTML +=
       `<article id=${ideas[i].id}>
         <section class="top-card-bar">
-          <img class="star" src="assets/star.svg" alt="star">
-          <img class="star hidden" src="assets/star-active.svg" alt="active star">
+          <img class="star" id="inactiveStar" src="assets/star.svg" alt="star">
+          <img class="star hidden" id="activeStar" src="assets/star-active.svg" alt="active star">
           <img class="delete" id="deleteImage" src="assets/delete.svg" alt="delete">
           <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
         </section>
@@ -83,3 +84,16 @@ function deleteCard() {
     }
   }
 };
+
+function toggleFavoriteStatus() {
+  for (var i = 0; i < ideas.length; i++) {
+    if(event.target.id === 'inactiveStar' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      ideas[i].star = true;
+      // emptyStar.classList.add('hidden');
+      // filledStar.classList.remove('hidden');
+      // if(img.className === 'star') {
+      //
+      }
+    }
+  }
+}
