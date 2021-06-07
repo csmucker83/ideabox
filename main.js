@@ -60,7 +60,6 @@ function renderCard() {
       `<article id=${ideas[i].id}>
         <section class="top-card-bar">
           <img class="star" id="inactiveStar" src="assets/star.svg" alt="star">
-          <img class="star hidden" id="activeStar" src="assets/star-active.svg" alt="active star">
           <img class="delete" id="deleteImage" src="assets/delete.svg" alt="delete">
           <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
         </section>
@@ -86,14 +85,16 @@ function deleteCard() {
 };
 
 function toggleFavoriteStatus() {
+  var starItem = event.target
   for (var i = 0; i < ideas.length; i++) {
     if(event.target.id === 'inactiveStar' && ideas[i].id === parseInt(event.target.closest('article').id)) {
       ideas[i].star = true;
-      // emptyStar.classList.add('hidden');
-      // filledStar.classList.remove('hidden');
-      // if(img.className === 'star') {
-      //
-      }
+      starItem.src = 'assets/star-active.svg'
+      starItem.id = 'activeStar'
+    } else if(event.target.id === 'activeStar' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      ideas[i].star = false;
+      starItem.src = 'assets/star.svg'
+      starItem.id = 'inactiveStar'
     }
   }
 }
