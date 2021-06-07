@@ -34,11 +34,15 @@ function createNewIdea(event) {
 };
 
 function enableSaveBtn() {
-  if(titleInput.value && bodyInput.value) {
+  var titleVal = titleInput.value;
+  var bodyVal = bodyInput.value;
+
+  if(titleVal && bodyVal) {
     saveBtn.classList.remove('inactive-save-btn');
     saveBtn.disabled = false;
   }
-  if(!titleInput.value || !bodyInput.value) {
+
+  if(!titleVal || !bodyVal) {
     saveBtn.disabled = true;
   }
 };
