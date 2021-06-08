@@ -4,31 +4,24 @@
 // updateIdea (should be able to update the idea’s title, body, or starred state)
 
 class Idea {
-  constructor(titleInput, bodyInput) {
-    this.id = Date.now();
+  constructor(titleInput, bodyInput, id, star) {
+    this.id = id || Date.now();
     this.title = titleInput;
     this.body = bodyInput;
-    this.star = false;
-  }
+    this.star = star || false;
+  };
 
   saveToStorage() {
     var key = JSON.stringify(this.id);
     var ideaStringified = JSON.stringify(this);
     localStorage.setItem(key, ideaStringified);
-  }
-
-  // saveToStorage() {
-  //   var ideasStored = [];
-  //   ideasStored.push(localStorage.setItem('ideaStored', JSON.stringify(this)));
-  // }
-
+  };
 
   deleteFromStorage() {
     localStorage.removeItem(this.id.toString());
-  }
-  
+  };
 
   updateIdea() {
 //need to come back to this
-  }
-}
+  };
+};
