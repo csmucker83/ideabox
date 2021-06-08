@@ -9,6 +9,9 @@ var formArea = document.getElementById('formArea');
 var ideaCardSection = document.getElementById('ideaCardSection');
 var emptyStar = document.getElementById('inactiveStar');
 var filledStar = document.getElementById('activeStar');
+var starstuff = document.querySelector('.star');
+
+
 
 //EventListeners
 window.addEventListener('load', loadPage);
@@ -22,11 +25,14 @@ ideaCardSection.addEventListener('click', toggleFavoriteStatus);
 // Functions and Event Handlers
 function loadPage() {
   disableSaveBtn();
+  refreshIdeas();
+  renderCard();
 };
 
 function createNewIdea(event) {
   event.preventDefault();
   var newIdea = new Idea(titleInput.value, bodyInput.value);
+  newIdea.saveToStorage();
   ideas.push(newIdea);
   renderCard();
   clearInputFields();
@@ -34,15 +40,12 @@ function createNewIdea(event) {
 };
 
 function enableSaveBtn() {
-  var titleVal = titleInput.value;
-  var bodyVal = bodyInput.value;
-
-  if(titleVal && bodyVal) {
+  if(titleInput.value && bodyInput.value) {
     saveBtn.classList.remove('inactive-save-btn');
     saveBtn.disabled = false;
   }
 
-  if(!titleVal || !bodyVal) {
+  if(!titleInput.value || !bodyInput.value) {
     saveBtn.disabled = true;
   }
 };
@@ -82,6 +85,8 @@ function renderCard() {
 function deleteCard() {
   for (var i = 0; i < ideas.length; i++) {
     if (event.target.id === 'deleteImage' && ideas[i].id === parseInt(event.target.closest('article').id)) {
+      console.log(ideas[i]);
+      ideas[i].deleteFromStorage();
       ideas.splice(i, 1);
       renderCard();
     }
@@ -101,4 +106,12 @@ function toggleFavoriteStatus() {
       starItem.id = 'inactiveStar'
     }
   }
+};
+
+function refreshIdeas() {
+  for (var i = 0; i < localStorage.length; i++) {
+    ideas.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+  }
 }
+
+//👆 this is pushing an object not associated with the idea class. It has all the info, but maybe needs to be instantied again?
