@@ -85,7 +85,6 @@ function renderCard() {
 function deleteCard() {
   for (var i = 0; i < ideas.length; i++) {
     if (event.target.id === 'deleteImage' && ideas[i].id === parseInt(event.target.closest('article').id)) {
-      console.log(ideas[i]);
       ideas[i].deleteFromStorage();
       ideas.splice(i, 1);
       renderCard();
@@ -110,8 +109,10 @@ function toggleFavoriteStatus() {
 
 function refreshIdeas() {
   for (var i = 0; i < localStorage.length; i++) {
-    ideas.push(JSON.parse(localStorage.getItem(localStorage.key(i))));
+  var parsedIdea = JSON.parse(localStorage.getItem(localStorage.key(i)));
+  var savedIdea = new Idea (parsedIdea.title, parsedIdea.body, parsedIdea.id, parsedIdea.star)
+  ideas.push(savedIdea);
   }
-}
+};
 
-//👆 this is pushing an object not associated with the idea class. It has all the info, but maybe needs to be instantied again?
+//👆 this was pushing an object not associated with the idea class. It has all the info, but maybe needs to be instantied again?
