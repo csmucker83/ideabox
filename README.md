@@ -26,10 +26,8 @@
 ## Features
 
    - You are able to create and locally store ideas to return to at a later date.
-   - You must enter in a title and a body in order to save your idea.
+   - You can create a title and a body for your idea.
    - If you have an idea you really like, then click the star on the right corner of the idea to favorite it.
-   - You can visit your favorites section to view all of your favorited ideas.
-   - If you want to search for an idea, start typing in the search bar and the ideas with the given words will appear on your idea dashboard.
    - Also, if you have already fulfilled an idea or just don't like it anymore, you can delete it.
 
 ## Illustrations
@@ -42,8 +40,9 @@ Visit our published IdeaBox page [here](https://csmucker83.github.io/ideabox/)
 
 ## Possible Future Extensions
 
-  - Create screen responsiveness for viewing on any size screen.
-
+  - Create a favorites section to view all of favorited ideas.
+  - Create search bar functionality to filter through and sort ideas.
+  
 ## Set Up
 
 1. Fork this repo  
