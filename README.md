@@ -32,7 +32,7 @@
 
 ## Illustrations
 
-![IdeaBox]()
+![IdeaBox gif](https://user-images.githubusercontent.com/80136642/121288832-d770a500-c898-11eb-92bc-f449b748259a.gif)
 
 ## Deployed Page
 
@@ -42,7 +42,7 @@ Visit our published IdeaBox page [here](https://csmucker83.github.io/ideabox/)
 
   - Create a favorites section to view all of favorited ideas.
   - Create search bar functionality to filter through and sort ideas.
-  
+
 ## Set Up
 
 1. Fork this repo  
