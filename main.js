@@ -2,16 +2,13 @@
 var ideas = [];
 
 //QuerySelectors
-var titleInput = document.getElementById('titleInput');
-var saveBtn = document.getElementById('saveBtn');
 var bodyInput = document.getElementById('bodyInput');
-var formArea = document.getElementById('formArea');
-var ideaCardSection = document.getElementById('ideaCardSection');
 var emptyStar = document.getElementById('inactiveStar');
+var formArea = document.getElementById('formArea');
 var filledStar = document.getElementById('activeStar');
-var starstuff = document.querySelector('.star');
-
-
+var ideaCardSection = document.getElementById('ideaCardSection');
+var saveBtn = document.getElementById('saveBtn');
+var titleInput = document.getElementById('titleInput');
 
 //EventListeners
 window.addEventListener('load', loadPage);
@@ -61,14 +58,19 @@ function clearInputFields() {
 };
 
 function renderCard() {
+  var src;
   ideaCardSection.innerHTML = '';
     for (var i = 0; i < ideas.length; i++) {
+      if(ideas[i].star) {
+        src = 'assets/star-active.svg'
+      } else {
+        src = 'assets/star.svg'
+      }
       ideaCardSection.innerHTML +=
       `<article id=${ideas[i].id}>
         <section class="top-card-bar">
-          <img class="star" id="inactiveStar" src="assets/star.svg" alt="star">
+          <img class="star" id="inactiveStar" src=${src} alt="star">
           <img class="delete" id="deleteImage" src="assets/delete.svg" alt="delete">
-          <!-- <img class="delete hidden" src="assets/delete-active.svg" alt="active delete"> HOVER STATE TOGGLE -->
         </section>
         <div class="card-text">
           <h4>${ideas[i].title}</h4>
@@ -114,5 +116,3 @@ function refreshIdeas() {
   ideas.push(savedIdea);
   }
 };
-
-//👆 this was pushing an object not associated with the idea class. It has all the info, but maybe needs to be instantied again?
