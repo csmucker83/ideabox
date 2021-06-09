@@ -148,6 +148,18 @@ article {
   width: 90%;
 }
 
+.card-text {
+  font-size: 1em;
+  height: 72%;
+  width: 90%;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+  overflow: auto;
+  font-size: 15px;
+  font-size: 1.8vh;
+  font-size: 1.8vw;
+}
+
 h4 {
   margin: 5%;
 }
